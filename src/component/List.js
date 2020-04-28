@@ -1,21 +1,17 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class List extends Component {
   render() {
-    return (
-      <ul>
-        <li>
-          <a href="1.html">1.html</a>
-        </li>
-        <li>
-          <a href="2.html">2.html</a>
-        </li>
-        <li>
-          <a href="3.html">3.html</a>
-        </li>
-      </ul>
-    );
+    let list_data = [];
+    let data = this.props.data;
+    for (let i = 0; i < data.length; i++) {
+      list_data.push(
+        <li key={data[i].id}>
+          <a href={'html.' + data[i].id}>{data[i].title}</a>
+        </li>,
+      );
+    }
+    return <ul>{list_data}</ul>;
   }
 }
-
 export default List;
