@@ -4,10 +4,13 @@ class List extends Component {
   render() {
     let list_data = [];
     let data = this.props.data;
+    let onclick = this.props.onclick;
     for (let i = 0; i < data.length; i++) {
       list_data.push(
         <li key={data[i].id}>
-          <a href={'html.' + data[i].id}>{data[i].title}</a>
+          <a id={data[i].id} href={'html.' + data[i].id} onClick={onclick}>
+            {data[i].title}
+          </a>
         </li>,
       );
     }
